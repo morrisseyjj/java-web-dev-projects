@@ -2,7 +2,7 @@ package org.launchcode;
 public class BalancedBrackets {
     /*
      * The function BalancedBrackets should return true if and only if
-     * the input string has a set of "balanced" brackets.
+     * the input string has a set of "balanced" brackets.  X
      *
      * That is, whether it consists entirely of pairs of opening/closing
      * brackets (in that order), none of which mis-nest. We consider a bracket
@@ -26,7 +26,11 @@ public class BalancedBrackets {
                 brackets++;
             } else if (ch == ']') {
                 brackets--;
+             //   break;      (worked for "] [" but not "[[ ]]" needed if statement below-if(brackets <0)
             }
+              if (brackets < 0) {
+                     return false;
+              }
         }
         return brackets == 0;
     }
